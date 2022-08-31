@@ -46,12 +46,13 @@ class FSupertrendStrategy(IStrategy):
     }
 
     # ROI table:
-    minimal_roi = {"0": 0.15, "30": 0.75, "60": 0.05, "120": 0.025}
-    # minimal_roi = {"0": 1}
+    # minimal_roi = {"0": 0.15, "30": 0.75, "60": 0.05, "120": 0.025}
+    minimal_roi = {"0": 100}
+    
     
 
     # Stoploss:
-    stoploss = -0.19
+    stoploss = -0.70
 
     profit_max_enabled = True
 
@@ -61,10 +62,11 @@ class FSupertrendStrategy(IStrategy):
     trailing_stop_positive_offset = 0.1
     trailing_only_offset_is_reached = False
 
-    timeframe = "1h"
+    timeframe = "1m"
     position_adjustment_enable = True
     can_short: bool = True
 
+    process_only_new_candles = True
     use_exit_signal = True
     exit_profit_only = False
     exit_profit_offset = 0.01
