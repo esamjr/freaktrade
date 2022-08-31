@@ -1,7 +1,7 @@
 ---
 version: '3'
 services:
-  freqtrade:
+  web:
     image: freqtradeorg/freqtrade:stable
     # image: freqtradeorg/freqtrade:develop
     # Use plotting image
@@ -18,7 +18,7 @@ services:
     # Please read the https://www.freqtrade.io/en/stable/rest-api/ documentation
     # before enabling this.
     ports:
-      - "127.0.0.1:8080:8080"
+      - "8080:8080"
     # Default command used when running `docker compose up`
     command: >
       trade
